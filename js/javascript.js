@@ -49,4 +49,7 @@ addExternalLinks = function() {
 // call it in another function e.g. after append a child element
 addExternalLinks();
 
-
+// hide animated gif if page is visited by browsers back button
+$(window).bind("pageshow", function(event) {
+  $("img.circle").hide();
+});
