@@ -3,4 +3,4 @@
 
 DIR=${PWD}
 FILE=$1
-$(sed -i '' 's|.*snippets|'"$DIR"'|g' $FILE)
+$(sed -i.bak 's|.*snippets|'"$DIR"'|g' $FILE)
