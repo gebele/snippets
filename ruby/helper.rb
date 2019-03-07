@@ -6,3 +6,15 @@ def seconds_to_units(seconds)
       result
     }
 end
+
+# find hash in nested hash
+class Hash
+  def find_by_key(key, object=self, out=nil)
+    if object.respond_to?(:key?) && object.key?(key)
+      return object[key]
+    elsif object.is_a? Enumerable
+      object.find { |*a| out = find_by_key(key, a.last) }
+      return out
+    end
+  end
+end
